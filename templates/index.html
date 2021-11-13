@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Area</title>
+</head>
+
+<style type="text/css">
+
+*, *::before, *::after{
+  box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  -o-box-sizing: border-box;  
+}
+
+#containerFull {
+  width: 780px;
+  margin: 0 auto;
+}
+
+#container {
+  border: 3px solid #000;
+  width: 566px;
+  height: 563px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: left;
+}
+
+.row {
+  clear: both;
+}
+
+.row div {
+  font-size: 3em;
+  float: left;
+  width: 70px;
+  height: 70px;
+  border-left: 1.5px solid #000;
+  border-bottom: 1.5px solid #000;
+  text-align: center;
+}
+
+.row div:first-child {
+  border-left: 0;
+}
+
+.line-1 div:nth-child(2n+1)  {
+  background: #FFF;
+  color: #FFF
+}
+
+.line-2 div:nth-child(2n)  {
+  background: #FFF;
+  color: #FFF
+}
+
+#pontuacao {
+  border: 1px solid #000;
+  width: 227px;
+  height: 270px;
+  float:left;
+  padding: 6px;
+  font-size: 30px;
+  text-align: left;
+  margin-left: 5px;
+  border-radius: 5px; 
+}
+
+.mensagem {
+  text-align: center;
+}
+
+</style>
+
+<body onload="mostrar_pontos();">
+
+	<div id="pontuacao">
+	<form method="POST" action="ligar_pontos">
+		<label>Ponto 1:</label>
+		<input type="number" min="1" max="8" name="X_1" placeholder="Coordenada X">
+		<input type="number" min="1" max="8" name="Y_1" placeholder="Coordenada Y">
+		<label>Ponto 2:</label>
+		<input type="number" min="1" max="8" name="X_2" placeholder="Coordenada X">
+		<input type="number" min="1" max="8" name="Y_2" placeholder="Coordenada Y">
+		<center>
+			<input type="submit" value="Ligar">
+		</center>
+	</form>
+	</div>
+
+	<div id="containerFull">
+		<div id="container">
+		<div class="row line-1">
+		  <div id="1"></div>
+		  <div id="2"></div>
+		  <div id="3"></div>
+		  <div id="4"></div>
+		  <div id="5"></div>
+		  <div id="6"></div>
+		  <div id="7"></div>
+		  <div id="8"></div>
+		</div>
+		<div class="row line-2">
+		  <div id="9"></div>
+		  <div id="10"></div>
+		  <div id="11"></div>
+		  <div id="12"></div>
+		  <div id="13"></div>
+		  <div id="14"></div>
+		  <div id="15"></div>
+		  <div id="16"></div>
+		</div>
+		<div class="row line-1">
+		  <div id="17"></div>
+		  <div id="18"></div>
+		  <div id="19"></div>
+		  <div id="20"></div>
+		  <div id="21"></div>
+		  <div id="22"></div>
+		  <div id="23"></div>
+		  <div id="24"></div>
+		</div>
+		<div class="row line-2">
+		  <div id="25"></div>
+		  <div id="26"></div>
+		  <div id="27"></div>
+		  <div id="28"></div>
+		  <div id="29"></div>
+		  <div id="30"></div>
+		  <div id="31"></div>
+		  <div id="32"></div>
+		</div>
+		<div class="row line-1">
+		  <div id="33"></div>
+		  <div id="34"></div>
+		  <div id="35"></div>
+		  <div id="36"></div>
+		  <div id="37"></div>
+		  <div id="38"></div>
+		  <div id="39"></div>
+		  <div id="40"></div>
+		</div>
+		<div class="row line-2">
+		  <div id="41"></div>
+		  <div id="42"></div>
+		  <div id="43"></div>
+		  <div id="44"></div>
+		  <div id="45"></div>
+		  <div id="46"></div>
+		  <div id="47"></div>
+		  <div id="48"></div>
+		</div>
+		<div class="row line-1">
+		  <div id="49"></div>
+		  <div id="50"></div>
+		  <div id="51"></div>
+		  <div id="52"></div>
+		  <div id="53"></div>
+		  <div id="54"></div>
+		  <div id="55"></div>
+		  <div id="56"></div>
+		</div>
+		<div class="row line-2">
+		  <div id="57"></div>
+		  <div id="58"></div>
+		  <div id="59"></div>
+		  <div id="60"></div>
+		  <div id="61"></div>
+		  <div id="62"></div>
+		  <div id="63"></div>
+		  <div id="64"></div>
+		</div>
+		</div>
+		</div>
+
+	<script type="text/javascript">
+		var pontos = [11, 12, 30, 38, 50, 61]
+		for(i = 0; i < pontos.length; i++){
+			document.getElementById(pontos[i]).innerHTML = '<div style="background-color: #808080;" title="Impedimento"></div>';
+		}
+	</script>
+
+	{% for i in posicoes %}
+	<script type="text/javascript">
+		document.getElementById({{ i }}).innerHTML = '<div style="background-color: #32CD32;" title="{{ i }}"></div>';
+	</script>
+	{% endfor %}
+
+</body>
+</html>
