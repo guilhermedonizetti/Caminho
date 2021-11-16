@@ -23,12 +23,14 @@ def ligar_pontos():
             coordenadas[i] = 1
 
     posicao = fc.ligar_os_pontos(coordenadas)
+    print("Posicoes: {}".format(posicao))
     caminho = fc.buscar_caminho(posicao)
 
     if caminho == False:
         caminho = [0]
         return render_template("index.html", posicoes=caminho)
     else:
+        print("Caminho: {}".format(caminho))
         return render_template("index.html", posicoes=caminho)
 
 if __name__ == '__main__':
