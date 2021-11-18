@@ -23,7 +23,7 @@
 #container {
   border: 3px solid #000;
   width: 566px;
-  height: 563px;
+  height: 580px;
   border-radius: 5px;
   cursor: pointer;
   float: left;
@@ -60,7 +60,7 @@
 #pontuacao {
   border: 1px solid #000;
   width: 227px;
-  height: 270px;
+  height: 335px;
   float:left;
   padding: 6px;
   font-size: 30px;
@@ -85,6 +85,12 @@
 		<label>Ponto 2:</label>
 		<input type="number" min="1" max="8" name="X_2" placeholder="Coordenada X">
 		<input type="number" min="1" max="8" name="Y_2" placeholder="Coordenada Y">
+		<label>Método:</label>
+		<select name="metodo">
+			<option value="AMPLITUDE" selected>Amplitude</option>
+			<option value="PROFUNDIDADE">Profundidade</option>
+			<option value="APROFUNDAMENTO ITERATIVO">Aprofundamento Iterativo</option>
+		</select>
 		<center>
 			<input type="submit" value="Ligar">
 		</center>

@@ -13,13 +13,13 @@ def ligar_os_pontos(coordenadas):
 
     return posicoes
 
-def buscar_caminho(pontos):
+def buscar_caminho(pontos, metodo):
     agente = Agente()
     agente.starting_points = [str(pontos[0])] #ponto de partida
     agente.nodes = posicoes.nos
     agente.graphs = posicoes.arestas
 
-    caminho = agente.encontrar_ajuda_humanitaria(str(pontos[1]), "AMPLITUDE") #ponto final, metodo.
+    caminho = agente.encontrar_ajuda_humanitaria(str(pontos[1]), metodo) #ponto final, metodo.
 
     if type(caminho) != list:
         return False
