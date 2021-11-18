@@ -189,6 +189,13 @@
 		}
 	</script>
 
+	{% if posicoes[0] == 0 %}
+	<script type="text/javascript">
+		alert(
+			"Caminho não encotrado!\nVocê pode ter selecionado um ponto que seja um impecílio.\nTalvez não preencheu um ou todos os campos necessários.")
+	</script>
+	{% endif %}
+
 	{% for i in posicoes %}
 	<script type="text/javascript">
 		document.getElementById({{ i }}).innerHTML = '<div style="background-color: #32CD32;" title="{{ i }}"></div>';
